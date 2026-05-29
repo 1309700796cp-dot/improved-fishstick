@@ -1,17 +1,40 @@
-Option Explicit
+# Desktop Countdown Widget
 
-Dim shell, fso, appDir, scriptPath, command
+这是一个 Windows 桌面倒计时浮窗项目，配套一个可部署到 Cloudflare 的下载页。
 
-Set shell = CreateObject("WScript.Shell")
-Set fso = CreateObject("Scripting.FileSystemObject")
+## 目录结构
 
-appDir = fso.GetParentFolderName(WScript.ScriptFullName)
-scriptPath = fso.BuildPath(appDir, "DesktopCalendarFloat.ps1")
+- `public/`：Cloudflare 静态网页目录
+- `public/downloads/DesktopCountdownWidgetSetup-v1.0.0.exe`：Windows 安装版
+- `public/downloads/DesktopCountdownWidget-v1.0.0.zip`：Windows 便携版
+- `app/`：桌面浮窗源码和启动脚本
 
-If Not fso.FileExists(scriptPath) Then
-    MsgBox "DesktopCalendarFloat.ps1 was not found. Please extract the whole zip first.", 48, "Desktop Countdown Widget"
-    WScript.Quit 1
-End If
+## 本地使用
 
-command = "powershell.exe -NoProfile -ExecutionPolicy Bypass -STA -WindowStyle Hidden -File " & Chr(34) & scriptPath & Chr(34)
-shell.Run command, 0, False
+推荐下载 `DesktopCountdownWidgetSetup-v1.0.0.exe`，双击安装后会创建桌面和开始菜单入口。
+
+如果使用便携版，下载并解压 `DesktopCountdownWidget-v1.0.0.zip` 后：
+
+1. 双击 `Start-DesktopCalendar.cmd` 启动浮窗
+2. 如需开机自启动，双击 `Enable-Startup.cmd`
+
+## Cloudflare
+
+连接 GitHub 仓库后，Cloudflare 设置：
+
+- Build command: 留空
+- Deploy command: `npx wrangler deploy`
+
+`wrangler.toml` 已经配置了：
+
+```toml
+[assets]
+directory = "./public"
+```
+
+自定义域名建议同时绑定：
+
+- `chanping.de`
+- `www.chanping.de`
+
+如果只绑定其中一个，另一个地址不会自动可用。
