@@ -340,6 +340,18 @@
       max-width: 680px;
     }
 
+    .pending-note {
+      margin-top: 20px;
+      min-height: 96px;
+      display: grid;
+      place-items: center;
+      border: 1px dashed rgba(102, 112, 133, 0.28);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--muted);
+      font-weight: 800;
+    }
+
     .tool-grid {
       margin-top: 24px;
       display: grid;
@@ -576,30 +588,17 @@
         <span class="brand-mark">CT</span>
         <span>Chanping Tools</span>
       </a>
-      <div class="nav-links">
-        <a href="#tools">工具库</a>
-        <a href="#download">下载</a>
-        <a href="#guide">使用说明</a>
-      </div>
     </nav>
   </header>
 
   <main class="page">
     <section class="hero">
       <div>
-        <div class="eyebrow">Windows 桌面小工具库</div>
-        <h1>把常用的小工具放在顺手的位置</h1>
-        <p class="lead">
-          这里会逐步收纳轻量、安静、开箱即用的 Windows 桌面工具。当前主工具是桌面倒计时浮窗，后续可以继续加入便签、专注计时、文件整理等小工具。
-        </p>
+        <div class="eyebrow">Windows 桌面小工具</div>
+        <h1>桌面倒计时浮窗</h1>
         <div class="hero-actions" id="download">
           <a class="button primary" href="/downloads/DesktopCountdownWidgetSetup-v1.0.0.exe" download>下载安装版 EXE</a>
-          <a class="button secondary" href="/downloads/DesktopCountdownWidget-v1.0.0.zip" download>下载便携版 zip</a>
-          <a class="button secondary" href="https://github.com/1309700796cp-dot/curly-waddle" target="_blank" rel="noreferrer">查看 GitHub</a>
         </div>
-        <p class="mini-note">
-          推荐使用安装版 EXE：双击安装后会创建桌面和开始菜单入口。便携版 zip 需要先完整解压，再双击 <strong>Start-DesktopCalendar.cmd</strong> 启动。
-        </p>
       </div>
 
       <div class="preview-wrap" aria-label="倒计时浮窗预览">
@@ -625,84 +624,17 @@
     <section id="tools" aria-labelledby="tools-title">
       <div class="section-head">
         <div>
-          <h2 id="tools-title">工具库</h2>
-          <p class="section-copy">当前先开放一个桌面浮窗工具，下面的位置已经按后续扩展预留。以后新增工具时，可以直接变成多工具下载页。</p>
+          <h2 id="tools-title">更多工具</h2>
         </div>
       </div>
 
-      <div class="tool-grid">
-        <article class="tool-card active">
-          <div class="tool-top">
-            <div class="tool-icon">01</div>
-            <span class="status">可下载</span>
-          </div>
-          <h3>桌面倒计时浮窗</h3>
-          <p>显示日期、毕业倒计时、法定节假日提醒，支持右侧小浮窗、背景主题和天气动效。</p>
-          <div class="tool-meta">
-            <span class="pill">Windows</span>
-            <span class="pill">便携版</span>
-            <span class="pill">开机自启动</span>
-          </div>
-          <div class="card-actions">
-            <a class="download" href="/downloads/DesktopCountdownWidgetSetup-v1.0.0.exe" download>下载 EXE</a>
-            <a href="/downloads/DesktopCountdownWidget-v1.0.0.zip" download>便携版 zip</a>
-            <a href="#guide">使用说明</a>
-          </div>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-top">
-            <div class="tool-icon green">02</div>
-            <span class="status soon">预留</span>
-          </div>
-          <h3>专注计时器</h3>
-          <p>后续可以放番茄钟、学习计时、休息提醒等功能，和桌面浮窗保持同一套视觉风格。</p>
-          <div class="tool-meta">
-            <span class="pill">计划中</span>
-            <span class="pill">Windows</span>
-          </div>
-          <div class="card-actions">
-            <span>暂未开放</span>
-          </div>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-top">
-            <div class="tool-icon amber">03</div>
-            <span class="status soon">预留</span>
-          </div>
-          <h3>快捷便签</h3>
-          <p>后续可以加入桌面轻便签、待办提醒、临时记录等小工具，适合作为第二个下载项。</p>
-          <div class="tool-meta">
-            <span class="pill">计划中</span>
-            <span class="pill">轻量工具</span>
-          </div>
-          <div class="card-actions">
-            <span>暂未开放</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="guide" id="guide" aria-label="使用说明">
-      <div class="guide-item">
-        <strong>1. 推荐安装版</strong>
-        <span>下载安装版 EXE 后双击运行，会自动创建桌面和开始菜单入口。</span>
-      </div>
-      <div class="guide-item">
-        <strong>2. 便携版 zip</strong>
-        <span>如果下载 zip，请先完整解压，再双击 Start-DesktopCalendar.cmd。</span>
-      </div>
-      <div class="guide-item">
-        <strong>3. 开机自启动</strong>
-        <span>需要开机自动显示时，运行一次 Enable-Startup.cmd。</span>
-      </div>
+      <div class="pending-note">待定</div>
     </section>
   </main>
 
   <footer class="site-footer">
     <span>Chanping Tools</span>
-    <span>轻量 Windows 桌面工具集合</span>
+    <span>Windows 桌面小工具</span>
   </footer>
 </body>
 </html>
